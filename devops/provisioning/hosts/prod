@@ -1,2 +1,2 @@
 [prod]
-62.4.19.69 ansible_ssh_user=www-data
+62.4.19.69 ansible_ssh_user=ubuntu

@@ -1,3 +1,7 @@
+set :deploy_config_path, "devops/deploy/deploy.rb"
+set :stage_config_path, "devops/deploy/stages/"
+#set :upload_files_path, "capistrano/files/"
+
 # Load DSL and set up stages
 require "capistrano/setup"
 

@@ -10,6 +10,6 @@ apt_dependencies:
   - python-apt
   - aptitude
 
-apt_specific_packages:
-  - python-apt
-  - git
+#apt_specific_packages:
+#  - python-apt
+#  - git

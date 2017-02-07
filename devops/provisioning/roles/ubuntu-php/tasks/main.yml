@@ -5,6 +5,6 @@
   with_items: "{{ php_packages }}"
   when: php_packages is defined
   notify:
-    - restart php7-fpm
+    - restart php5-fpm
 
 - include: configure.yml
