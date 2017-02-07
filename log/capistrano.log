@@ -203,3 +203,94 @@
   INFO [4c8d67fe] Running /usr/bin/env echo "Branch master (at df2960ba13c303d3ed322a09456aa6146493162f) deployed as release 20170206180551 by Frederic" >> /var/www/myapp/revisions.log as ubuntu@62.4.19.69
  DEBUG [4c8d67fe] Command: cd /var/www/myapp/releases && /usr/bin/env echo "Branch master (at df2960ba13c303d3ed322a09456aa6146493162f) deployed as release 20170206180551 by Frederic" >> /var/www/myapp/revisions.log
   INFO [4c8d67fe] Finished in 0.016 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-06 19:10:37 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b8918e3e] Running /usr/bin/env mkdir -p /tmp as ubuntu@62.4.19.69
+ DEBUG [b8918e3e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b8918e3e] Finished in 0.498 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-myapp-production-Frederic.sh 0.0%
+  INFO Uploading /tmp/git-ssh-myapp-production-Frederic.sh 100.0%
+  INFO [339b5164] Running /usr/bin/env chmod 700 /tmp/git-ssh-myapp-production-Frederic.sh as ubuntu@62.4.19.69
+ DEBUG [339b5164] Command: /usr/bin/env chmod 700 /tmp/git-ssh-myapp-production-Frederic.sh
+  INFO [339b5164] Finished in 0.016 seconds with exit status 0 (successful).
+  INFO [89d13aa1] Running /usr/bin/env git ls-remote https://github.com/fredericbarthelet/symfony-demo.git HEAD as ubuntu@62.4.19.69
+ DEBUG [89d13aa1] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-myapp-production-Frederic.sh" ; /usr/bin/env git ls-remote https://github.com/fredericbarthelet/symfony-demo.git HEAD )
+ DEBUG [89d13aa1] 	df2960ba13c303d3ed322a09456aa6146493162f	HEAD
+  INFO [89d13aa1] Finished in 1.427 seconds with exit status 0 (successful).
+  INFO [7eb0bc1e] Running /usr/bin/env mkdir -p /var/www/myapp/shared /var/www/myapp/releases as ubuntu@62.4.19.69
+ DEBUG [7eb0bc1e] Command: /usr/bin/env mkdir -p /var/www/myapp/shared /var/www/myapp/releases
+  INFO [7eb0bc1e] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [b9ea1edc] Running [ -f /var/www/myapp/current/REVISION ] as ubuntu@62.4.19.69
+ DEBUG [b9ea1edc] Command: [ -f /var/www/myapp/current/REVISION ]
+ DEBUG [b9ea1edc] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [5c34a4c4] Running /usr/bin/env cat /var/www/myapp/current/REVISION 2>/dev/null as ubuntu@62.4.19.69
+ DEBUG [5c34a4c4] Command: /usr/bin/env cat /var/www/myapp/current/REVISION 2>/dev/null
+ DEBUG [5c34a4c4] 	df2960ba13c303d3ed322a09456aa6146493162f
+ DEBUG [5c34a4c4] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [239fd12b] Running [ -f /var/www/myapp/repo/HEAD ] as ubuntu@62.4.19.69
+ DEBUG [239fd12b] Command: [ -f /var/www/myapp/repo/HEAD ]
+ DEBUG [239fd12b] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/myapp/repo
+ DEBUG [07509a54] Running if test ! -d /var/www/myapp/repo; then echo "Directory does not exist '/var/www/myapp/repo'" 1>&2; false; fi as ubuntu@62.4.19.69
+ DEBUG [07509a54] Command: if test ! -d /var/www/myapp/repo; then echo "Directory does not exist '/var/www/myapp/repo'" 1>&2; false; fi
+ DEBUG [07509a54] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [269adc6f] Running /usr/bin/env git remote set-url origin https://github.com/fredericbarthelet/symfony-demo.git as ubuntu@62.4.19.69
+ DEBUG [269adc6f] Command: cd /var/www/myapp/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-myapp-production-Frederic.sh" ; /usr/bin/env git remote set-url origin https://github.com/fredericbarthelet/symfony-demo.git )
+  INFO [269adc6f] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [ac9ab8fb] Running /usr/bin/env git remote update --prune as ubuntu@62.4.19.69
+ DEBUG [ac9ab8fb] Command: cd /var/www/myapp/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-myapp-production-Frederic.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ac9ab8fb] 	Fetching origin
+  INFO [ac9ab8fb] Finished in 0.829 seconds with exit status 0 (successful).
+ DEBUG [a9849dc1] Running if test ! -d /var/www/myapp/repo; then echo "Directory does not exist '/var/www/myapp/repo'" 1>&2; false; fi as ubuntu@62.4.19.69
+ DEBUG [a9849dc1] Command: if test ! -d /var/www/myapp/repo; then echo "Directory does not exist '/var/www/myapp/repo'" 1>&2; false; fi
+ DEBUG [a9849dc1] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [8bcbf636] Running /usr/bin/env mkdir -p /var/www/myapp/releases/20170206181040 as ubuntu@62.4.19.69
+ DEBUG [8bcbf636] Command: cd /var/www/myapp/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-myapp-production-Frederic.sh" ; /usr/bin/env mkdir -p /var/www/myapp/releases/20170206181040 )
+  INFO [8bcbf636] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [7fd1c5e5] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/myapp/releases/20170206181040 as ubuntu@62.4.19.69
+ DEBUG [7fd1c5e5] Command: cd /var/www/myapp/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-myapp-production-Frederic.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/myapp/releases/20170206181040 )
+  INFO [7fd1c5e5] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [b300f36f] Running if test ! -d /var/www/myapp/repo; then echo "Directory does not exist '/var/www/myapp/repo'" 1>&2; false; fi as ubuntu@62.4.19.69
+ DEBUG [b300f36f] Command: if test ! -d /var/www/myapp/repo; then echo "Directory does not exist '/var/www/myapp/repo'" 1>&2; false; fi
+ DEBUG [b300f36f] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [ae5e8f16] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@62.4.19.69
+ DEBUG [ae5e8f16] Command: cd /var/www/myapp/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-myapp-production-Frederic.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ae5e8f16] 	df2960ba13c303d3ed322a09456aa6146493162f
+ DEBUG [ae5e8f16] Finished in 0.017 seconds with exit status 0 (successful).
+ DEBUG [3f52fe47] Running if test ! -d /var/www/myapp/releases/20170206181040; then echo "Directory does not exist '/var/www/myapp/releases/20170206181040'" 1>&2; false; fi as ubuntu@62.4.19.69
+ DEBUG [3f52fe47] Command: if test ! -d /var/www/myapp/releases/20170206181040; then echo "Directory does not exist '/var/www/myapp/releases/20170206181040'" 1>&2; false; fi
+ DEBUG [3f52fe47] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [96ecad12] Running /usr/bin/env echo "df2960ba13c303d3ed322a09456aa6146493162f" >> REVISION as ubuntu@62.4.19.69
+ DEBUG [96ecad12] Command: cd /var/www/myapp/releases/20170206181040 && /usr/bin/env echo "df2960ba13c303d3ed322a09456aa6146493162f" >> REVISION
+  INFO [96ecad12] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [e1a79216] Running /usr/bin/env ln -s /var/www/myapp/releases/20170206181040 /var/www/myapp/releases/current as ubuntu@62.4.19.69
+ DEBUG [e1a79216] Command: /usr/bin/env ln -s /var/www/myapp/releases/20170206181040 /var/www/myapp/releases/current
+  INFO [e1a79216] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [0a6fc0f8] Running /usr/bin/env mv /var/www/myapp/releases/current /var/www/myapp as ubuntu@62.4.19.69
+ DEBUG [0a6fc0f8] Command: /usr/bin/env mv /var/www/myapp/releases/current /var/www/myapp
+  INFO [0a6fc0f8] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [311cff4c] Running /usr/bin/env ls -x /var/www/myapp/releases as ubuntu@62.4.19.69
+ DEBUG [311cff4c] Command: /usr/bin/env ls -x /var/www/myapp/releases
+ DEBUG [311cff4c] 	20170206180452	20170206180551	20170206181040
+ DEBUG [311cff4c] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [c89d47f3] Running if test ! -d /var/www/myapp/releases; then echo "Directory does not exist '/var/www/myapp/releases'" 1>&2; false; fi as ubuntu@62.4.19.69
+ DEBUG [c89d47f3] Command: if test ! -d /var/www/myapp/releases; then echo "Directory does not exist '/var/www/myapp/releases'" 1>&2; false; fi
+ DEBUG [c89d47f3] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [f133900e] Running /usr/bin/env echo "Branch master (at df2960ba13c303d3ed322a09456aa6146493162f) deployed as release 20170206181040 by Frederic" >> /var/www/myapp/revisions.log as ubuntu@62.4.19.69
+ DEBUG [f133900e] Command: cd /var/www/myapp/releases && /usr/bin/env echo "Branch master (at df2960ba13c303d3ed322a09456aa6146493162f) deployed as release 20170206181040 by Frederic" >> /var/www/myapp/revisions.log
+  INFO [f133900e] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-06 19:27:00 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [164a1771] Running /usr/bin/env mkdir -p /tmp as www-data@62.4.19.69
+ DEBUG [164a1771] Command: /usr/bin/env mkdir -p /tmp
+  INFO [164a1771] Finished in 0.696 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-myapp-production-Frederic.sh 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-02-06 19:30:09 +0100 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ef4f9684] Running /usr/bin/env mkdir -p /tmp as www-data@62.4.19.69
+ DEBUG [ef4f9684] Command: /usr/bin/env mkdir -p /tmp
+  INFO [ef4f9684] Finished in 0.816 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-myapp-production-Frederic.sh 0.0%

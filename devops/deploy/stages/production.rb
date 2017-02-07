@@ -17,7 +17,7 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :web, %w{ubuntu@62.4.19.69}, other_property: :other_value
+role :web, %w{www-data@62.4.19.69}, other_property: :other_value
 
 
 
